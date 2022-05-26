@@ -1,0 +1,491 @@
+{
+  "title": "2022-23 Family Registration Form",
+  "subTitle": "",
+  "type": "object",
+  "properties": {
+    "fullName": {
+      "type": "object",
+      "title": "",
+      "required": ["firstName", "lastName"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "title": "First name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "Last name"
+        }
+      }
+    },
+    "dob": {
+      "type": "string",
+      "title": "Date of Birth",
+      "format": "date"
+    },
+    "gender": {
+      "type": "string",
+      "title": "Gender",
+      "enum": ["Male", "Female", "Others"]
+    },
+    "ethnicity": {
+      "type": "string",
+      "enum": ["Male", "Female", "Others"],
+      "title": "Ethnicity",
+      "default": ""
+    },
+    "note": {
+      "type": null,
+      "body": "This information helps us to better understand the diversity of our student body. The National Association of Independent Schools requests this data."
+    },
+    "primaryInfo": {
+      "type": "object",
+      "title": "Primary Household Information",
+      "required": ["streetAddress"],
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+          "title": "Street Address"
+        },
+        "city": {
+          "type": "string",
+          "title": "City"
+        },
+        "state": {
+          "type": "string",
+          "title": "State"
+        },
+        "postal": {
+          "type": "string",
+          "title": "Postal"
+        }
+      }
+    },
+    "legalGuardian": {
+      "type": "string",
+      "title": "Who is the legal guardian?"
+    },
+    "studentLiving": {
+      "type": "string",
+      "title": "With whom is the student living?"
+    },
+    "firstParent": {
+      "type": "object",
+      "title": "First Parent/Guardian",
+      "properties": {
+        "fullName": {
+          "type": "object",
+          "title": "",
+          "required": ["firstName", "lastName"],
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "title": "First name"
+            },
+            "lastName": {
+              "type": "string",
+              "title": "Last name"
+            }
+          }
+        },
+        "primaryPhone": {
+          "type": "string",
+          "title": "Primary Phone"
+        },
+        "secondaryPhone": {
+          "type": "string",
+          "title": "Secondary Phone"
+        },
+        "primaryEmail": {
+          "type": "string",
+          "title": "Primary Email"
+        },
+        "relationshiptoStudent": {
+          "type": "string",
+          "title": "Relationship to Student"
+        }
+      }
+    },
+    "employmentInfo1": {
+      "type": "object",
+      "title": "Employment Information",
+      "properties": {
+        "employmentStatus": {
+          "type": "string",
+          "title": "Employment Status"
+        },
+        "occupation": {
+          "type": "string",
+          "title": "Title/Occupation"
+        },
+        "businessName": {
+          "type": "string",
+          "title": "Business Name"
+        },
+        "businessPhone": {
+          "type": "string",
+          "title": "Business Phone"
+        },
+        "businessAddress": {
+          "type": "object",
+          "title": "Business Address",
+          "properties": {
+            "streetAddress": {
+              "type": "string",
+              "title": "Street Address"
+            },
+            "city": {
+              "type": "string",
+              "title": "City"
+            },
+            "state": {
+              "type": "string",
+              "title": "State"
+            },
+            "postal": {
+              "type": "string",
+              "title": "Postal"
+            }
+          }
+        }
+      }
+    },
+    "secondParent1": {
+      "title": "Second Parent/Guardian",
+      "$ref": "#/definitions/person"
+    },
+    "secondParent": {
+      "type": "object",
+      "title": "Second Parent/Guardian",
+      "properties": {
+        "isSecondParent": {
+          "type": "boolean",
+          "title": "Is there a second parent/legal guardian in this household?"
+        },
+        "fullName": {
+          "type": "object",
+          "title": "",
+          "required": ["firstName", "lastName"],
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "title": "First name"
+            },
+            "lastName": {
+              "type": "string",
+              "title": "Last name"
+            }
+          }
+        },
+        "primaryPhone": {
+          "type": "string",
+          "title": "Primary Phone"
+        },
+        "secondaryPhone": {
+          "type": "string",
+          "title": "Secondary Phone"
+        },
+        "primaryEmail": {
+          "type": "string",
+          "title": "Primary Email"
+        },
+        "relationshiptoStudent": {
+          "type": "string",
+          "title": "Relationship to Student"
+        }
+      }
+    },
+    "employmentInfo2": {
+      "type": "object",
+      "title": "Employment Information",
+      "properties": {
+        "employmentStatus": {
+          "type": "string",
+          "title": "Employment Status"
+        },
+        "occupation": {
+          "type": "string",
+          "title": "Title/Occupation"
+        },
+        "businessName": {
+          "type": "string",
+          "title": "Business Name"
+        },
+        "businessPhone": {
+          "type": "string",
+          "title": "Business Phone"
+        },
+        "businessAddress": {
+          "type": "object",
+          "title": "Business Address",
+          "properties": {
+            "streetAddress": {
+              "type": "string",
+              "title": "Street Address"
+            },
+            "city": {
+              "type": "string",
+              "title": "City"
+            },
+            "state": {
+              "type": "string",
+              "title": "State"
+            },
+            "postal": {
+              "type": "string",
+              "title": "Postal"
+            }
+          }
+        }
+      }
+    },
+    "siblingInfo": {
+      "title": "Sibling Information",
+      "$ref": "#/definitions/sibling"
+    },
+    "alternateInfo": {
+      "type": "null",
+      "title": "Alternate Emergency Contact(s) and Pick-up Authorization",
+      "description": "If the parent(s)/guardian(s) identified above cannot be reached in an emergency, the following people are emergency contacts and are authorized to pick up the student from school and/or Extended Day Program. Please provide any additional adults authorized to pick up the student below. Only adults listed below will be allowed to pick up the student:"
+    },
+    "alertnateInfoDetails": {
+      "type": "object",
+      "title": "Alternate Emergency Contact 1",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "relationshiptoStudent": {
+          "type": "string",
+          "title": "Relationship to Student"
+        },
+        "phone": {
+          "type": "string",
+          "title": "Phone"
+        }
+      }
+    },
+    "pickUpAuth": {
+      "type": "object",
+      "title": "Pick-up Authorization 1",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "relationshiptoStudent": {
+          "type": "string",
+          "title": "Relationship to Student"
+        },
+        "phone": {
+          "type": "string",
+          "title": "Phone"
+        }
+      }
+    },
+    "grandParentInfo": {
+      "type": "object",
+      "title": "Grandparent Contact Information",
+      "description": "We send grandparents our Grandparent Newsletter and invite them to our Grandparents' Day.",
+      "properties": {
+        "isGrandParentList": {
+          "type": "boolean",
+          "title": "Would you like to list any Grandparents?"
+        }
+      }
+    },
+    "electronicSignatureRegForm": {
+      "type": "object",
+      "title": "Electronic Signature",
+      "properties": {
+        "signature": {
+          "type": "string",
+          "title": "Signature"
+        }
+      }
+    },
+    "formNote": {
+      "type": null,
+      "body": "<div>If student has two living parents or guardians, both must sign this waiver, unless the parents or Guardians are divorced, in which case all parents and/or guardians with legal custody of student must Sign.<p></p><p>By signing my name and clicking the 'Submit' button, I am certifying that I agree to submit this Waiver electronically. I have read and accepted all of the terms and conditions on all pages of this Waiver. I am verifying that I am the person whose name appears below and agree that typing my name below and clicking I agree is the legal equivalent to a manual signature on a document. For those who do not agree to sign electronically, they may print out this Waiver and manually sign it and return it to School</p></div>"
+    }
+  },
+  "definitions": {
+    "sibling": {
+      "type": "object",
+      "properties": {
+        "How many siblings, if any, does the applicant have?": {
+          "type": "string",
+          "enum": ["1", "2", "3"]
+        }
+      },
+      "dependencies": {
+        "How many siblings, if any, does the applicant have?": {
+          "oneOf": [
+            {
+              "properties": {
+                "How many siblings, if any, does the applicant have?": {
+                  "enum": ["1"]
+                },
+                "Sibling 1": {
+                  "type": "object",
+                  "properties": {
+                    "fullName": {
+                      "type": "object",
+                      "title": "",
+                      "required": ["firstName", "lastName"],
+                      "properties": {
+                        "firstName": {
+                          "type": "string",
+                          "title": "First name"
+                        },
+                        "lastName": {
+                          "type": "string",
+                          "title": "Last name"
+                        }
+                      }
+                    },
+                    "relationshiptoStudent": {
+                      "type": "string",
+                      "title": "Relationship to Student"
+                    },
+                    "dob": {
+                      "type": "string",
+                      "title": "Date of Birth",
+                      "format": "date",
+                      "default": "DD/MM/YYYY"
+                    },
+                    "currentGrade": {
+                      "type": "string",
+                      "title": "Current Grade"
+                    },
+                    "currentSchool": {
+                      "type": "string",
+                      "title": "Current School"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "How many siblings, if any, does the applicant have?": {
+                  "enum": ["2"]
+                },
+                "Sibling 1": {
+                  "type": "object",
+                  "properties": {
+                    "fullName": {
+                      "type": "object",
+                      "title": "",
+                      "required": ["firstName", "lastName"],
+                      "properties": {
+                        "firstName": {
+                          "type": "string",
+                          "title": "First name"
+                        },
+                        "lastName": {
+                          "type": "string",
+                          "title": "Last name"
+                        }
+                      }
+                    },
+                    "relationshiptoStudent": {
+                      "type": "string",
+                      "title": "Relationship to Student"
+                    },
+                    "dob": {
+                      "type": "string",
+                      "title": "Date of Birth",
+                      "format": "date",
+                      "default": "DD/MM/YYYY"
+                    },
+                    "currentGrade": {
+                      "type": "string",
+                      "title": "Current Grade"
+                    },
+                    "currentSchool": {
+                      "type": "string",
+                      "title": "Current School"
+                    }
+                  }
+                },
+                "Sibling 2": {
+                  "type": "object",
+                  "properties": {
+                    "fullName": {
+                      "type": "object",
+                      "title": "",
+                      "required": ["firstName", "lastName"],
+                      "properties": {
+                        "firstName": {
+                          "type": "string",
+                          "title": "First name"
+                        },
+                        "lastName": {
+                          "type": "string",
+                          "title": "Last name"
+                        }
+                      }
+                    },
+                    "relationshiptoStudent": {
+                      "type": "string",
+                      "title": "Relationship to Student"
+                    },
+                    "dob": {
+                      "type": "string",
+                      "title": "Date of Birth",
+                      "format": "date",
+                      "default": "DD/MM/YYYY"
+                    },
+                    "currentGrade": {
+                      "type": "string",
+                      "title": "Current Grade"
+                    },
+                    "currentSchool": {
+                      "type": "string",
+                      "title": "Current School"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "boolean",
+          "title": "Is there a second parent/legal guardian in this household?",
+          "default": null,
+          "enum": [null, true]
+        }
+      },
+      "dependencies": {
+        "true": {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "object",
+              "title": "",
+              "required": ["firstName", "lastName"],
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "title": "First name"
+                },
+                "lastName": {
+                  "type": "string",
+                  "title": "Last name"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
