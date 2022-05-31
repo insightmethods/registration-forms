@@ -1,6 +1,7 @@
 {
   "title": "Family Handbook Acknowledgement Form",
   "subTitle": "Please Acknowledge",
+  "required": ["email"],
   "type": "object",
   "properties": {
     "fullName": {
@@ -34,7 +35,7 @@
     "electronicSignatureInfo": {
       "type": "null",
       "title": "",
-      "body": "<b>By signing my name</b> and clicking the 'Submit' button, I am certifying that I agree to submit this Waiver electronically. I have read and accepted all of the terms and conditions on all pages of this Waiver. I am verifying that I am the person whose name appears below and agree that typing my name below and clicking 'I agree' is the legal equivalent to a manual signature on a document. For those who do not agree to sign electronically, they may print out this Waiver and manually sign it and return it to School.",
+      "body": "By signing my name and clicking the 'Submit' button, I am certifying that I agree to submit this Waiver electronically. I have read and accepted all of the terms and conditions on all pages of this Waiver. I am verifying that I am the person whose name appears below and agree that typing my name below and clicking 'I agree' is the legal equivalent to a manual signature on a document. For those who do not agree to sign electronically, they may print out this Waiver and manually sign it and return it to School.",
       "default": ""
     }
   }
