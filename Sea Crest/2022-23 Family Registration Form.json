@@ -35,10 +35,6 @@
       "title": "Ethnicity",
       "default": ""
     },
-    "note": {
-      "type": null,
-      "body": "This information helps us to better understand the diversity of our student body. The National Association of Independent Schools requests this data."
-    },
     "primaryInfo": {
       "type": "object",
       "title": "Primary Household Information",
@@ -467,10 +463,6 @@
           "title": "Signature"
         }
       }
-    },
-    "formNote": {
-      "type": null,
-      "body": "<div>If student has two living parents or guardians, both must sign this waiver, unless the parents or Guardians are divorced, in which case all parents and/or guardians with legal custody of student must Sign.<p></p><p>By signing my name and clicking the 'Submit' button, I am certifying that I agree to submit this Waiver electronically. I have read and accepted all of the terms and conditions on all pages of this Waiver. I am verifying that I am the person whose name appears below and agree that typing my name below and clicking I agree is the legal equivalent to a manual signature on a document. For those who do not agree to sign electronically, they may print out this Waiver and manually sign it and return it to School</p></div>"
     }
   }
 }
