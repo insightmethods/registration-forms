@@ -317,8 +317,53 @@
     },
     "siblingInfo": {
       "title": "Sibling Information",
-      "type": "string",
-      "enum": ["1", "2", "3"]
+      "type": "object",
+      "properties": {
+        "maxSibling": {
+          "type": "string",
+          "title": "How many siblings, if any, does the applicant have?",
+          "enum": ["1", "2", "3"]
+        },
+        "sibling1": {
+          "title": "Sibling 1",
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "object",
+              "title": "",
+              "required": ["firstName", "lastName"],
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "title": "First name"
+                },
+                "lastName": {
+                  "type": "string",
+                  "title": "Last name"
+                }
+              }
+            },
+            "relationshiptoStudent": {
+              "type": "string",
+              "title": "Relationship to Student"
+            },
+            "dob": {
+              "type": "string",
+              "title": "Date of Birth",
+              "format": "date",
+              "default": "DD/MM/YYYY"
+            },
+            "currentGrade": {
+              "type": "string",
+              "title": "Current Grade"
+            },
+            "currentSchool": {
+              "type": "string",
+              "title": "Current School"
+            }
+          }
+        }
+      }
     },
     "alternateInfo": {
       "type": "null",
