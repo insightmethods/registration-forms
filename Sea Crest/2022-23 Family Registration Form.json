@@ -317,7 +317,8 @@
     },
     "siblingInfo": {
       "title": "Sibling Information",
-      "$ref": "#/definitions/sibling"
+      "type": "string",
+      "enum": ["1", "2", "3"]
     },
     "alternateInfo": {
       "type": "null",
