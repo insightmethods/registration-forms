@@ -2,6 +2,7 @@
   "title": "Tech User Agreement Form",
   "subTitle": "Please Acknowledge",
   "type": "object",
+  "required": ["email"],
   "properties": {
     "electronicSignatureInfoTech": {
       "type": "null",
