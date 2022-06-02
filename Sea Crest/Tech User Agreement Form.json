@@ -5,16 +5,16 @@
   "properties": {
     "fullName": {
       "type": "object",
-      "title": "Parent(S) And/or Legal Guardian(S)",
+      "title": "Parents And/or Legal Guardians",
       "required": ["firstName", "lastName"],
       "properties": {
         "firstName": {
           "type": "string",
-          "title": "First name"
+          "title": "First Name"
         },
         "lastName": {
           "type": "string",
-          "title": "Last name"
+          "title": "Last Name"
         }
       }
     },
