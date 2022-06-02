@@ -25,7 +25,8 @@
     },
     "electronicInfo": {
       "type": "boolean",
-      "title": "I accept all financial and legal liabilities which may result from the student's use of school-owned technology  . I release Sea Crest School from any and all liability for damages or potential claims arising from theft, loss, or damage to the student's assigned school-ownedtechnology device and email account."
+      "title": "I accept all financial and legal liabilities which may result from the student's use of school-owned technology  . I release Sea Crest School from any and all liability for damages or potential claims arising from theft, loss, or damage to the student's assigned school-ownedtechnology device and email account.",
+      "default":true
     },
 
     "electronicSignature": {
