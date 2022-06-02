@@ -26,7 +26,7 @@
     },
     "electronicInfo": {
       "type": "boolean",
-      "title": "I, the undersigned, acknowledge that we have reviewed the Sea Crest Family Handbook and agree to abide by the policies, procedures, sentiments, rules, regulations, and routines shared within. I understand that these may be amended or modified at the School's sole discretion."
+      "title": "I, the undersigned, acknowledge that we have reviewed the Sea Crest Family Handbook and agree to abide by the policies, procedures, sentiments, rules, regulations, and routines shared within. I understand that these may be amended or modified at the School's sole discretion.",
       "default":true,
     },
     "electronicSignature": {
