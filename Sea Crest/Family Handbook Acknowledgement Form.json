@@ -1,37 +1,44 @@
 {
-  "title": "Family Handbook Acknowledgement Form",
-  "subTitle": "Please Acknowledge",
-  "required": ["email", "electronicInfo", "electronicSignature"],
-  "type": "object",
-  "properties": {
-    "fullName": {
-      "type": "object",
-      "title": "",
-      "required": ["firstName", "lastName"],
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "title": "First Name"
-        },
-        "lastName": {
-          "type": "string",
-          "title": "Last Name"
-        }
+   "title":"Family Handbook Acknowledgement Form",
+   "subTitle":"Please Acknowledge",
+   "required":[
+      "email",
+      "electronicInfo",
+      "electronicSignature"
+   ],
+   "type":"object",
+   "properties":{
+      "fullName":{
+         "type":"object",
+         "title":"",
+         "required":[
+            "firstName",
+            "lastName"
+         ],
+         "properties":{
+            "firstName":{
+               "type":"string",
+               "title":"First Name"
+            },
+            "lastName":{
+               "type":"string",
+               "title":"Last Name"
+            }
+         }
+      },
+      "email":{
+         "type":"string",
+         "title":"Email",
+         "slug":"email"
+      },
+      "electronicInfo":{
+         "type":"boolean",
+         "title":"I, the undersigned, acknowledge that we have reviewed the Sea Crest Family Handbook and agree to abide by the policies, procedures, sentiments, rules, regulations, and routines shared within. I understand that these may be amended or modified at the School's sole discretion.",
+         "default":true
+      },
+      "electronicSignature":{
+         "type":"string",
+         "title":"Signature"
       }
-    },
-    "email": {
-      "type": "string",
-      "title": "Email",
-      "slug": "email"
-    },
-    "electronicInfo": {
-      "type": "boolean",
-      "title": "I, the undersigned, acknowledge that we have reviewed the Sea Crest Family Handbook and agree to abide by the policies, procedures, sentiments, rules, regulations, and routines shared within. I understand that these may be amended or modified at the School's sole discretion.",
-      "default":true,
-    },
-    "electronicSignature": {
-      "type": "string",
-      "title": "Signature"
-    }
-  }
+   }
 }
