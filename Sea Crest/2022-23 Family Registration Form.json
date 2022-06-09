@@ -3,42 +3,58 @@
   "subTitle": "",
   "type": "object",
   "required": ["dob", "gender", "ethnicity", "legalGuardian", "studentLiving"],
+  "description": "Welcome to the 2022-2023 Family Registration Form. This year you will be completing a series of forms for each member of your family through the Beehively software. If you have any technical difficulties the Beehively team is always happy to help, feel free to reach out to them directly at support@beehively.com or (888) 851-4879.",
   "properties": {
     "fullName": {
       "type": "object",
-      "title": "",
+      "title": "Student Information",
       "required": ["firstName", "lastName"],
       "properties": {
         "firstName": {
           "type": "string",
-          "title": "First name"
+          "title": "First Name"
         },
         "lastName": {
           "type": "string",
-          "title": "Last name"
+          "title": "Last Name"
         }
       }
     },
     "dob": {
       "type": "string",
-      "title": "Date of Birth",
-      "format": "date"
+      "format": "date",
+      "title": "Date of Birth"
     },
     "gender": {
       "type": "string",
       "title": "Gender",
-      "enum": ["Male", "Female", "Others"]
+      "enum": ["Male", "Female", "Other"]
     },
     "ethnicity": {
       "type": "string",
-      "enum": ["Male", "Female", "Others"],
+      "enum": [
+        "Black/African American",
+        "Latino/Hispanic American",
+        "Asian American",
+        "Native American",
+        "Middle Eastern American",
+        "Multiracial American",
+        "Pacific Islander American",
+        "White, non-Hispanic",
+        "International"
+      ],
       "title": "Ethnicity",
       "default": ""
+    },
+    "note": {
+      "type": "object",
+      "title": "",
+      "description": "This information helps us to better understand the diversity of our student body. The National Association of Independent Schools requests this data."
     },
     "primaryInfo": {
       "type": "object",
       "title": "Primary Household Information",
-      "required": ["streetAddress"],
+      "required": ["streetAddress", "city", "state", "postal"],
       "properties": {
         "streetAddress": {
           "type": "string",
@@ -54,7 +70,7 @@
         },
         "postal": {
           "type": "string",
-          "title": "Postal"
+          "title": "Zip Code"
         }
       }
     },
@@ -95,7 +111,7 @@
     "firstParent": {
       "type": "object",
       "title": "First Parent/Guardian",
-      "required": ["primaryEmail"],
+      "required": ["primaryEmail", "relationshiptoStudent"],
       "properties": {
         "fullName": {
           "type": "object",
@@ -104,11 +120,11 @@
           "properties": {
             "firstName": {
               "type": "string",
-              "title": "First name"
+              "title": "First Name"
             },
             "lastName": {
               "type": "string",
-              "title": "Last name"
+              "title": "Last Name"
             }
           }
         },
@@ -116,14 +132,26 @@
           "type": "object",
           "title": "Primary Phone/Cell Phone",
           "properties": {
-            "isUseForAlert": {
+            "isPrimaryPhoneUseForCellphone": {
+              "type": "boolean",
+              "title": "Use for Primary Cell Phone"
+            },
+            "isPrimaryPhoneUseForAlert": {
               "type": "boolean",
               "title": "Use for Alert Phone Calls"
             },
+            "isPrimaryPhoneUseForText": {
+              "type": "boolean",
+              "title": "Use for Alert Text Messages"
+            },
+            "isPrimaryPhoneUseForDirectory": {
+              "type": "boolean",
+              "title": "Display On Directory"
+            },
             "primaryPhoneInput": {
               "type": "string",
-              "title": " ",
-              "maxLength": 10
+              "title": "",
+              "format": "phone-us"
             }
           }
         },
@@ -131,6 +159,10 @@
           "type": "object",
           "title": "Secondary Phone/Home Phone",
           "properties": {
+            "isUseForHomeSecondaryphone": {
+              "type": "boolean",
+              "title": "Use for Secondary Home Phone"
+            },
             "isSecondaryPhoneForAlert": {
               "type": "boolean",
               "title": "Use for Alert Phone Calls"
@@ -139,10 +171,14 @@
               "type": "boolean",
               "title": "Use for Alert Text Messages"
             },
+            "isSecondaryPhoneForDirectory": {
+              "type": "boolean",
+              "title": "Display On Directory"
+            },
             "secondaryPhoneInput": {
               "type": "string",
               "title": " ",
-              "pattern": "^[0-9]{10}$"
+              "pattern": "^\\d*$"
             }
           }
         },
@@ -172,9 +208,9 @@
           "type": "string",
           "title": "Business Name"
         },
-        "businessPhone": {
+        "workPhone": {
           "type": "string",
-          "title": "Business Phone"
+          "title": "Work Phone"
         },
         "businessAddress": {
           "type": "object",
@@ -194,269 +230,50 @@
             },
             "postal": {
               "type": "string",
-              "title": "Postal"
+              "title": "Zip Code"
             }
           }
         }
       }
     },
-    "secondParent": {
-      "type": "object",
-      "title": "Second Parent/Guardian",
-      "properties": {
-        "isSecondParent": {
-          "type": "boolean",
-          "title": "Is there a second parent/legal guardian in this household?"
-        },
-        "fullName": {
-          "type": "object",
-          "title": "",
-          "required": ["firstName", "lastName"],
-          "properties": {
-            "firstName": {
-              "type": "string",
-              "title": "First name"
-            },
-            "lastName": {
-              "type": "string",
-              "title": "Last name"
-            }
-          }
-        },
-        "primaryPhone": {
-          "type": "object",
-          "title": "Primary Phone/Cell Phone",
-          "properties": {
-            "isUseForAlert": {
-              "type": "boolean",
-              "title": "Use for Alert Phone Calls"
-            },
-            "primaryPhoneInput": {
-              "type": "string",
-              "title": " ",
-              "maxLength": 10
-            }
-          }
-        },
-        "secondaryPhone": {
-          "type": "object",
-          "title": "Secondary Phone/Home Phone",
-          "properties": {
-            "isSecondaryPhoneForAlert": {
-              "type": "boolean",
-              "title": "Use for Alert Phone Calls"
-            },
-            "isSecondaryPhoneForText": {
-              "type": "boolean",
-              "title": "Use for Alert Text Messages"
-            },
-            "secondaryPhoneInput": {
-              "type": "string",
-              "title": " ",
-              "pattern": "^[0-9]{10}$"
-            }
-          }
-        },
-        "primaryEmail": {
-          "type": "string",
-          "title": "Primary Email"
-        },
-        "relationshiptoStudent": {
-          "type": "string",
-          "title": "Relationship to Student"
-        }
-      }
-    },
-    "employmentInfo2": {
-      "type": "object",
-      "title": "Employment Information",
-      "properties": {
-        "employmentStatus": {
-          "type": "string",
-          "title": "Employment Status"
-        },
-        "occupation": {
-          "type": "string",
-          "title": "Title/Occupation"
-        },
-        "businessName": {
-          "type": "string",
-          "title": "Business Name"
-        },
-        "businessPhone": {
-          "type": "string",
-          "title": "Business Phone"
-        },
-        "businessAddress": {
-          "type": "object",
-          "title": "Business Address",
-          "properties": {
-            "streetAddress": {
-              "type": "string",
-              "title": "Street Address"
-            },
-            "city": {
-              "type": "string",
-              "title": "City"
-            },
-            "state": {
-              "type": "string",
-              "title": "State"
-            },
-            "postal": {
-              "type": "string",
-              "title": "Postal"
-            }
-          }
-        }
-      }
-    },
-    "siblingInfo": {
-      "title": "Sibling Information",
-      "type": "object",
-      "properties": {
-        "maxSibling": {
-          "type": "string",
-          "title": "How many siblings, if any, does the applicant have?",
-          "enum": ["1", "2", "3"]
-        },
-        "sibling1": {
-          "title": "Sibling 1",
-          "type": "object",
-          "properties": {
-            "fullName": {
-              "type": "object",
-              "title": "",
-              "required": ["firstName", "lastName"],
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "title": "First name"
-                },
-                "lastName": {
-                  "type": "string",
-                  "title": "Last name"
-                }
-              }
-            },
-            "relationshiptoStudent": {
-              "type": "string",
-              "title": "Relationship to Student"
-            },
-            "dob": {
-              "type": "string",
-              "title": "Date of Birth",
-              "format": "date",
-              "default": "DD/MM/YYYY"
-            },
-            "currentGrade": {
-              "type": "string",
-              "title": "Current Grade"
-            },
-            "currentSchool": {
-              "type": "string",
-              "title": "Current School"
-            }
-          }
-        }
-      }
-    },
+
     "alternateInfo": {
-      "type": "null",
+      "type": "object",
       "title": "Alternate Emergency Contact(s) and Pick-up Authorization",
       "description": "If the parent(s)/guardian(s) identified above cannot be reached in an emergency, the following people are emergency contacts and are authorized to pick up the student from school and/or Extended Day Program. Please provide any additional adults authorized to pick up the student below. Only adults listed below will be allowed to pick up the student:"
     },
-    "alertnateInfoDetails": {
+    "alertnateInfoDetailsOne": {
       "type": "object",
       "title": "Alternate Emergency Contact 1",
+      "required": ["name", "phone", "relationshiptoStudent"],
       "properties": {
         "name": {
           "type": "string",
           "title": "Name"
         },
-        "relationshiptoStudent": {
-          "type": "string",
-          "title": "Relationship to Student"
-        },
         "phone": {
           "type": "string",
           "title": "Phone"
-        }
-      }
-    },
-    "pickUpAuth": {
-      "type": "object",
-      "title": "Pick-up Authorization 1",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
         },
         "relationshiptoStudent": {
           "type": "string",
-          "title": "Relationship to Student"
+          "title": "Relationship To Student"
         },
-        "phone": {
-          "type": "string",
-          "title": "Phone"
-        }
-      }
-    },
-    "grandParentInfo": {
-      "type": "object",
-      "title": "Grandparent Contact Information",
-      "description": "We send grandparents our Grandparent Newsletter and invite them to our Grandparents' Day.",
-      "properties": {
-        "isGrandParentList": {
+        "isUseForPickup": {
           "type": "boolean",
-          "title": "Would you like to list any Grandparents?"
+          "title": "Can Pickup"
         },
-        "fullName": {
-          "type": "object",
-          "title": "",
-          "required": ["firstName", "lastName"],
-          "properties": {
-            "firstName": {
-              "type": "string",
-              "title": "First name"
-            },
-            "lastName": {
-              "type": "string",
-              "title": "Last name"
-            }
-          }
-        },
-        "grandParentEmail": {
-          "type": "string",
-          "title": "Primary Email"
-        },
-        "grandParentAddress": {
-          "type": "object",
-          "title": "Business Address",
-          "properties": {
-            "streetAddress": {
-              "type": "string",
-              "title": "Street Address"
-            },
-            "city": {
-              "type": "string",
-              "title": "City"
-            },
-            "state": {
-              "type": "string",
-              "title": "State"
-            },
-            "postal": {
-              "type": "string",
-              "title": "Postal"
-            }
-          }
+        "isUseForEmergency": {
+          "type": "boolean",
+          "title": "Use in an Emergency"
         }
       }
     },
+
     "electronicSignatureRegForm": {
       "type": "object",
       "title": "Electronic Signature",
+      "required": ["signature"],
       "properties": {
         "signature": {
           "type": "string",
