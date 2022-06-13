@@ -219,18 +219,6 @@
             "streetAddress": {
               "type": "string",
               "title": "Street Address"
-            },
-            "city": {
-              "type": "string",
-              "title": "City"
-            },
-            "state": {
-              "type": "string",
-              "title": "State"
-            },
-            "postal": {
-              "type": "string",
-              "title": "Zip Code"
             }
           }
         }
